@@ -25,7 +25,7 @@ sudo pacman -S qt6-base qt6-tools gcc make
 ### Método 1: Terminal (Recomendado)
 ```bash
 # Navegue até a pasta do projeto
-cd port_scanner
+cd network-mapp
 
 # Compile o projeto
 qmake6 port_scanner.pro  # Para Qt6
