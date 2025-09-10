@@ -4,21 +4,7 @@ Um scanner de portas TCP/UDP moderno e intuitivo com interface.
 
 ## 📋 Pré-requisitos
 
-### Para Linux (Ubuntu/Debian):
-```bash
-sudo apt update
-sudo apt install build-essential qt6-base-dev qt6-tools-dev-tools
-```
-
-### Para Linux (Fedora):
-```bash
-sudo dnf install qt6-qtbase-devel qt6-tools-devel gcc-c++ make
-```
-
-### Para Arch Linux:
-```bash
-sudo pacman -S qt6-base qt6-tools gcc make
-```
+Qt Framework Develop
 
 ## 🚀 Como Compilar e Executar
 
