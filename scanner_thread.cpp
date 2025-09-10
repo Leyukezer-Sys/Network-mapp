@@ -87,6 +87,8 @@ void ScannerThread::run() {
     if (tcpSelected) {
         emit resultReady("\n[+] Varredura TCP iniciada...\n");
 
+        int cont = 0;
+
         for (int port = startPort; port <= endPort && !stopRequested; port++) {
             PortInfo portInfo;
             portInfo.portNumber = port;
@@ -99,13 +101,14 @@ void ScannerThread::run() {
             if (socket.waitForConnected(timeout)) {
                 portInfo.status = STATUS_OPEN;
                 socket.disconnectFromHost();
+                cont++;
             } else {
                 if (socket.error() == QTcpSocket::ConnectionRefusedError) {
-                    portInfo.status = STATUS_CLOSED;
+                    
                 } else {
-                    portInfo.status = STATUS_FILTERED;
+                    
                 }
-            }
+            }            
 
             emit portScanned(portInfo);
 
@@ -113,6 +116,11 @@ void ScannerThread::run() {
             int progress = (scannedPorts * 100) / totalScans;
             emit progressUpdate(progress);
         }
+
+        if (cont <= 0)
+            {
+               emit resultReady("\n[**] Nenhuma Porta Aberta encontrada...\n");
+            }
     }
 
     // Varredura UDP
@@ -135,7 +143,7 @@ void ScannerThread::run() {
             if (udpSocket.waitForReadyRead(timeout)) {
                 portInfo.status = STATUS_OPEN_UDP;
             } else {
-                portInfo.status = STATUS_FILTERED;
+                
             }
 
             emit portScanned(portInfo);
