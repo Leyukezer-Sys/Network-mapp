@@ -1,0 +1,11 @@
+debug/main.o
+debug/scanner_thread.o
+debug/network_discoverer.o
+debug/snake_game.o
+debug/theme_manager.o
+debug/theme_settings_panel.o
+debug/moc_scanner_thread.o
+debug/moc_network_discoverer.o
+debug/moc_snake_game.o
+debug/moc_theme_manager.o
+debug/moc_theme_settings_panel.o

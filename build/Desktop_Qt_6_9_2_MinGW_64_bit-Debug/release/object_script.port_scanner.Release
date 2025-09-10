@@ -1,0 +1,11 @@
+release/main.o
+release/scanner_thread.o
+release/network_discoverer.o
+release/snake_game.o
+release/theme_manager.o
+release/theme_settings_panel.o
+release/moc_scanner_thread.o
+release/moc_network_discoverer.o
+release/moc_snake_game.o
+release/moc_theme_manager.o
+release/moc_theme_settings_panel.o

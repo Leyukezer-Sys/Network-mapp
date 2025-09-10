@@ -104,9 +104,9 @@ void ScannerThread::run() {
                 cont++;
             } else {
                 if (socket.error() == QTcpSocket::ConnectionRefusedError) {
-                    
+                    portInfo.status = STATUS_CLOSED;
                 } else {
-                    
+                    portInfo.status = STATUS_FILTERED;
                 }
             }            
 
@@ -143,7 +143,7 @@ void ScannerThread::run() {
             if (udpSocket.waitForReadyRead(timeout)) {
                 portInfo.status = STATUS_OPEN_UDP;
             } else {
-                
+                portInfo.status = STATUS_FILTERED;
             }
 
             emit portScanned(portInfo);
