@@ -1,94 +1,98 @@
-# 🌐 NetWork Mainn - Scanner de Portas
+# 🚀 Network Port Scanner - GUI
 
-Um scanner de portas TCP/UDP moderno e intuitivo com interface.
+Uma aplicação desktop para varredura de portas de rede com interface gráfica intuitiva, desenvolvida em Python com PySimpleGUI.
 
-## 📋 Pré-requisitos
+## 📋 Descrição
 
-Qt Framework Develop
+O Network Port Scanner é uma ferramenta gráfica que permite escanear portas TCP e UDP em um endereço de rede especificado, exibindo os resultados de forma organizada e permitindo exportar os dados para análise.
 
-## 🚀 Como Compilar e Executar
+## ✨ Funcionalidades
 
-### Método 1: Terminal (Recomendado)
+- 🔍 Varredura de portas TCP e UDP
+- 🎯 Interface gráfica intuitiva
+- ⚡ Varredura multi-threaded para maior velocidade
+- 📊 Visualização de resultados em tabela
+- 💾 Exportação de resultados para CSV
+- 📈 Barra de progresso em tempo real
+- 🧹 Limpeza de resultados
+- ⏹️ Capacidade de parar varredura em andamento
+
+## 🛠️ Pré-requisitos
+
+- Python 3.6 ou superior
+
+## 📦 Instalação
+
+1. Clone ou baixe o repositório
+
+2. baixe o sv_ttk
+
 ```bash
-# Navegue até a pasta do projeto
-cd network-mapp
-
-# Compile o projeto
-qmake6 port_scanner.pro  # Para Qt6
-# ou
-qmake port_scanner.pro   # Para Qt5
-
-make
-
-# Execute
-./port_scanner
+pip install sv-ttk
 ```
 
-### Método 2: Qt Creator
-1. Abra o Qt Creator
-2. File → Open File or Project
-3. Selecione o arquivo `port_scanner.pro`
-4. Clique em "Configure Project"
-5. Pressione Ctrl+R para executar
+## 🚀 Como Usar
 
-## 🎯 Como Usar
+### Executando a Aplicação
 
-1. **Configuração**: 
-   - Digite o endereço IP ou hostname do alvo
-   - Defina o intervalo de portas a ser escaneado
-   - Selecione os protocolos (TCP/UDP)
+Execute o arquivo principal:
 
-2. **Varredura**:
-   - Clique em "🚀 Iniciar Varredura"
-   - Acompanhe o progresso na barra de progresso
+```bash
+python network-mapp-gui.py
+```
+
+### Interface Gráfica
+
+A interface é dividida em várias seções:
+
+1. **Configurações**:
+
+   - **Alvo**: Digite o endereço IP ou hostname a ser escaneado
+   - **Portas**: Especifique as portas (ex: "1-1000", "80,443,8080" ou "22")
+   - **Protocolos**: Selecione TCP e/ou UDP
+   - **Timeout**: Ajuste o tempo de espera para cada porta
+   - **Threads**: Defina o número de threads paralelas
+
+2. **Controles**:
+
+   - 🚀 **Iniciar Varredura**: Inicia o scan
+   - ⏹️ **Parar**: Interrompe a varredura em andamento
+   - 💾 **Exportar**: Salva os resultados em CSV
+   - 🧹 **Limpar**: Limpa os resultados atuais
 
 3. **Resultados**:
-   - Use os filtros para visualizar portas por protocolo ou status
-   - Exporte os resultados para CSV ou TXT
-   - Clique nos cabeçalhos para ordenar os resultados
+   - Tabela com portas, protocolos, status e serviços
+   - Log de atividades com timestamps
 
-## 🎨 Características
+### Executando uma Varredura
 
-- Interface com tema escuro
-- Visualização em tempo real dos resultados
-- Sistema de filtros avançado
-- Exportação de resultados
-- Detecção automática de alguns serviços
-- Suporte a varreduras TCP e UDP
+1. Preencha o endereço de destino
+2. Especifique o intervalo de portas desejado
+3. Selecione os protocolos (TCP/UDP)
+4. Ajuste timeout e threads conforme necessário
+5. Clique em "🚀 Iniciar Varredura"
+6. Aguarde a conclusão ou clique em "⏹️ Parar" para interromper
 
-## 🔧 Solução de Problemas
+### Exportando Resultados
 
-### Erro: "qmake não encontrado"
-```bash
-# Instale o Qt development tools
-sudo apt install qt6-base-dev qt6-tools-dev-tools
-```
+Após a varredura, clique em "💾 Exportar" para salvar os resultados em um arquivo CSV. Será solicitado o local e nome do arquivo.
 
-### Erro: Bibliotecas faltando
-```bash
-# Instale dependências comuns
-sudo apt install libgl1-mesa-dev
-```
-
-### Erro de compilação
-Certifique-se de que todas as dependências estão instaladas e tente:
-```bash
-make clean
-qmake
-make
-```
-
-## 📦 Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
 ```
-port_scanner/
-├── port_scanner.pro    # Arquivo de projeto
-├── main.cpp            # Código principal
-├── scanner_thread.h    # Cabeçalho da thread de scanner
-├── scanner_thread.cpp  # Implementação da thread
-└── README.md           # Este arquivo
+network-scanner/
+├── network-mapp-gui.py    # Aplicação principal com interface gráfica
+├── network-mapp.py        # Módulo de varredura de portas (deve estar no mesmo diretório)
+└── README.md              # Este arquivo
 ```
+
+## ⚠️ Notas Importantes
+
+- A ferramenta é para uso ético e educacional
+- Sempre obtenha permissão antes de escanear redes
+- Varreduras em redes não autorizadas podem ser ilegais
+- A precisão dos resultados depende das configurações de rede e firewall
 
 ---
 
-**Desenvolvido com Qt Framework** - Versão compatível: Qt 5.12+ ou Qt 6.0+
+**Desenvolvido com Python e PySimpleGUI**
